@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Paws Pet Care</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🐾 Happy Paws
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO HAPPY PAWS</p>
+
+            <h1>
+                Loving Care For
+                <span>Happy Pets</span>
+            </h1>
+
+            <p>
+                Professional pet daycare, grooming, healthcare
+                and adoption services for your furry friends.
+            </p>
+
+            <a href="#services" class="btn">
+                Explore Services
+            </a>
+
+        </div>
+
+        <!-- CLICK THIS PET TO CHANGE -->
+        <div
+            class="hero-image"
+            id="heroPet"
+            onclick="changeHeroPet()"
+            title="Click the pet to change it"
+        >
+            🐶
+
+            <span class="pet-click-hint">
+                Click me!
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section">
+
+        <div class="section-title">
+
+            <p>WHO WE ARE</p>
+
+            <h2>About Us</h2>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-image">
+                🐕
+            </div>
+
+
+            <div class="about-content">
+
+                <h2>We Treat Your Pets Like Family</h2>
+
+                <p>
+                    Happy Paws is a simple and friendly pet care center
+                    created to provide a safe and loving environment
+                    for pets.
+                </p>
+
+                <p>
+                    From daycare and grooming to vaccination checkups
+                    and pet adoption, we provide everything your pet
+                    needs in one place.
+                </p>
+
+
+                <div class="about-points">
+
+                    <div>
+                        ❤️
+                        <strong>Loving Care</strong>
+                    </div>
+
+                    <div>
+                        🩺
+                        <strong>Professional Care</strong>
+                    </div>
+
+                    <div>
+                        🏠
+                        <strong>Safe Environment</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services" class="section services-section">
+
+        <div class="section-title">
+
+            <p>WHAT WE OFFER</p>
+
+            <h2>Our Services</h2>
+
+            <span>
+                Everything your pet needs under one roof.
+            </span>
+
+        </div>
+
+
+        <div class="service-container">
+
+
+            <!-- ================= DAYCARE ================= -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🏠
+                </div>
+
+                <h3>Pet Daycare</h3>
+
+                <p>
+                    A safe and comfortable place where your pets
+                    can stay and play while you are away.
+                </p>
+
+                <button onclick="openForm('daycare')">
+                    Book Daycare
+                </button>
+
+            </div>
+
+
+            <!-- ================= PET CARE ================= -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🛁
+                </div>
+
+                <h3>Pet Care</h3>
+
+                <p>
+                    Complete grooming and healthcare services
+                    to keep your pet healthy and happy.
+                </p>
+
+                <button onclick="openForm('petcare')">
+                    Book Pet Care
+                </button>
+
+            </div>
+
+
+            <!-- ================= ADOPTION ================= -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🐶
+                </div>
+
+                <h3>Pet Adoption</h3>
+
+                <p>
+                    Give a loving home to pets waiting for a
+                    caring family.
+                </p>
+
+                <button onclick="openForm('adoption')">
+                    Adoption Request
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PET CARE SERVICES ================= -->
+
+        <div class="care-list">
+
+            <h2>Pet Care Includes</h2>
+
+            <div class="care-items">
+
+                <div>💅 Manicure</div>
+
+                <div>🛁 Bath</div>
+
+                <div>💉 Vaccination</div>
+
+                <div>🩺 Checkup</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICE FORMS ================= -->
+
+    <div id="formModal" class="modal">
+
+        <div class="modal-content">
+
+            <!-- CLOSE BUTTON -->
+            <span class="close" onclick="closeForm()">
+                &times;
+            </span>
+
+
+            <!-- ================= DAYCARE FORM ================= -->
+
+            <div id="daycareFormBox">
+
+                <h2>Book Pet Daycare</h2>
+
+                <form id="daycareForm">
+
+                    <input
+                        type="text"
+                        id="daycarePetName"
+                        placeholder="Pet Name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="daycareBreed"
+                        placeholder="Breed"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="daycareOwner"
+                        placeholder="Owner Name"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="daycareDate"
+                        required
+                    >
+
+                    <select id="daycareTime" required>
+
+                        <option value="">
+                            Select Timing
+                        </option>
+
+                        <option>
+                            9:00 AM - 11:00 AM
+                        </option>
+
+                        <option>
+                            11:00 AM - 1:00 PM
+                        </option>
+
+                        <option>
+                            2:00 PM - 4:00 PM
+                        </option>
+
+                        <option>
+                            4:00 PM - 6:00 PM
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        Book Daycare
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= PET CARE FORM ================= -->
+
+            <div id="petcareFormBox">
+
+                <h2>Pet Care &amp; Grooming</h2>
+
+                <form id="petcareForm">
+
+                    <input
+                        type="text"
+                        id="carePetName"
+                        placeholder="Pet Name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="careBreed"
+                        placeholder="Breed"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="careOwner"
+                        placeholder="Owner Name"
+                        required
+                    >
+
+                    <select id="careService" required>
+
+                        <option value="">
+                            Select Pet Care Service
+                        </option>
+
+                        <option>
+                            💅 Manicure
+                        </option>
+
+                        <option>
+                            🛁 Bath
+                        </option>
+
+                        <option>
+                            💉 Vaccination
+                        </option>
+
+                        <option>
+                            🩺 Health Checkup
+                        </option>
+
+                    </select>
+
+                    <input
+                        type="date"
+                        id="careDate"
+                        required
+                    >
+
+                    <textarea
+                        id="careNotes"
+                        placeholder="Pet health notes / special requirements"
+                        rows="4"
+                    ></textarea>
+
+                    <button type="submit">
+                        Book Pet Care
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= ADOPTION FORM ================= -->
+
+            <div id="adoptionFormBox">
+
+                <h2>Pet Adoption Request</h2>
+
+                <form id="adoptionForm">
+
+                    <input
+                        type="text"
+                        id="adopterName"
+                        placeholder="Your Full Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="adopterEmail"
+                        placeholder="Email Address"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        id="adopterPhone"
+                        placeholder="Phone Number"
+                        required
+                    >
+
+                    <select id="preferredPet" required>
+
+                        <option value="">
+                            Which pet do you want to adopt?
+                        </option>
+
+                        <option>
+                            Dog
+                        </option>
+
+                        <option>
+                            Cat
+                        </option>
+
+                        <option>
+                            Bird
+                        </option>
+
+                        <option>
+                            Reptile
+                        </option>
+
+                    </select>
+
+
+                    <select id="homeType" required>
+
+                        <option value="">
+                            Type of Home
+                        </option>
+
+                        <option>
+                            Apartment
+                        </option>
+
+                        <option>
+                            Independent House
+                        </option>
+
+                        <option>
+                            Farm / Large Property
+                        </option>
+
+                    </select>
+
+
+                    <select id="petExperience" required>
+
+                        <option value="">
+                            Previous Pet Experience?
+                        </option>
+
+                        <option>
+                            Yes
+                        </option>
+
+                        <option>
+                            No
+                        </option>
+
+                    </select>
+
+
+                    <textarea
+                        id="adoptionReason"
+                        placeholder="Why would you like to adopt this pet?"
+                        rows="4"
+                        required
+                    ></textarea>
+
+
+                    <button type="submit">
+                        Send Adoption Request
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+
+    <section id="testimonials" class="section">
+
+        <div class="section-title">
+
+            <p>HAPPY CUSTOMERS</p>
+
+            <h2>Testimonials</h2>
+
+        </div>
+
+
+        <div class="testimonial-container">
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    "Happy Paws is amazing! My dog loves going
+                    there for daycare."
+                </p>
+
+                <h4>— Priya</h4>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    "The grooming service was excellent and
+                    the staff were very friendly."
+                </p>
+
+                <h4>— Rahul</h4>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    "We adopted our lovely puppy through
+                    Happy Paws."
+                </p>
+
+                <h4>— Ananya</h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section contact-section">
+
+        <div class="section-title">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>Contact Us</h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h2>Let's Talk About Your Pet</h2>
+
+                <p>
+                    Have questions about our services?
+                    Send us a message.
+                </p>
+
+                <p>
+                    📍 Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    📧 happypaws@email.com
+                </p>
+
+                <h3>
+                    Daycare Timing
+                </h3>
+
+                <p>
+                    Monday - Saturday<br>
+                    9:00 AM - 6:00 PM
+                </p>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <form id="contactForm" class="contact-form">
+
+                <input
+                    type="text"
+                    id="contactName"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="contactSubject"
+                    placeholder="Subject"
+                    required
+                >
+
+                <textarea
+                    id="contactMessage"
+                    placeholder="Your Message"
+                    rows="6"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>
+            🐾 Happy Paws
+        </h2>
+
+        <p>
+            Caring for pets, one paw at a time.
+        </p>
+
+        <p>
+            © 2026 Happy Paws Pet Care
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
